@@ -1,0 +1,908 @@
+:root {
+  --white: #fff;
+  --black: #0f0f0f;
+
+  --neutral: #e9eaee;
+  --neutral-gray-1: #e9eaee;
+  --neutral-gray-2: #cbced7;
+  --neutral-gray-3: #aeb2c0;
+  --neutral-gray-5: #737993;
+  --neutral-gray-7: #444859;
+  --neutral-gray-8: #2e303b;
+
+  --primary: #438efd;
+  --primary-tint-1: #e4efff;
+  --primary-tint-3: #aecffe;
+  --primary-tint-5: #438efd;
+  --primary-tint-8: #287efd;
+  --primary-shade-2: #013075;
+  --primary-shade-5: #013075;
+  --primary-shade-7: #00183b;
+
+  --secondary: #ffd24d;
+  --secondary-tint-3: #ffecb3;
+}
+
+@font-face {
+  font-family: "iransans-reg";
+  src: url(./fonts/IRANSansXRegular.ttf);
+}
+@font-face {
+  font-family: "iransans-med";
+  src: url(./fonts/IRANSansXMedium.ttf);
+}
+@font-face {
+  font-family: "iransans-bold";
+  font-weight: bold;
+  src: url(./fonts/IRANSansXBold.ttf);
+}
+@font-face {
+  font-family: "iransans-black";
+  src: url(./fonts/IRANSansXBlack.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "iransans-reg";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: #f8f8f8;
+  direction: rtl;
+  font-family: "iransans-reg";
+  overflow-x: hidden;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav {
+  padding: 1rem 0;
+}
+nav .nav-buttons button {
+  display: flex;
+  align-items: center;
+  background-color: #438efd;
+  color: #fff;
+  border: none;
+  outline: none;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+nav .nav-search-md {
+  font-family: "iransans-reg";
+}
+
+main .hero {
+  text-align: center;
+  padding-top: 5rem;
+  width: 100%;
+}
+main .hero .hero-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .hero .hero-caption h1 {
+  font-family: "iransans-bold";
+  color: #00183b;
+}
+main .hero .hero-caption p {
+  color: #013075;
+}
+main .hero .hero-caption .buttons button {
+  cursor: pointer;
+}
+main .hero .hero-caption .buttons button img {
+  margin-bottom: -0.2rem;
+  margin-left: 0.5rem;
+}
+main .hero .hero-caption .buttons .about-btn {
+  background: transparent;
+  border: 1px solid #0f0f0f;
+  color: #2e303b;
+}
+main .hero .hero-caption .buttons .about-btn img {
+  margin-right: 0.7rem;
+}
+main .hero .hero-preview {
+  margin-top: 3rem;
+  position: relative;
+  margin-bottom: 5rem;
+}
+main .hero .hero-preview img {
+  width: 70%;
+}
+main .hero .hero-preview .preview-landscape {
+  position: absolute;
+  left: -7%;
+  bottom: -27%;
+}
+main .information {
+  display: grid;
+  gap: 4rem 0;
+  margin: 10rem 0;
+}
+main .information .info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+main .information .info::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background: #ffecb3;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+main .information .info-num {
+  margin-right: 3rem;
+  font-family: "iransans-med";
+  font-size: 2rem;
+}
+main .information .info-caption {
+  font-family: "iransans-bold";
+}
+main .business {
+  display: grid;
+  text-align: center;
+  margin: 5rem 0;
+  gap: 3rem;
+}
+main .business .business-card {
+  width: 100%;
+  position: relative;
+}
+main .business .business-card .square {
+  width: 100%;
+  height: 30%;
+  background: #aecffe;
+  position: absolute;
+  top: 20%;
+  z-index: -1;
+  padding: 2.9rem 0;
+  border-radius: 1rem;
+}
+main .business .business-card .business-caption {
+  font-family: "iransans-bold";
+  margin-top: 1rem;
+}
+main .business .business-card:nth-child(2) .square {
+  background: #438efd;
+}
+main .business .business-card:nth-child(3) .square {
+  background: #287efd;
+}
+main .category {
+  margin: 3rem 0;
+}
+main .category .category-section {
+  display: flex;
+  text-align: center;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.category-section::-webkit-scrollbar {
+  display: none;
+}
+.category-title {
+  position: relative;
+  margin: 3rem;
+}
+
+.category-title h4 {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "iransans-bold";
+  color: var(--neutral-gray-5);
+}
+
+.category-title h4::after {
+  content: "";
+  height: 2px;
+  display: inline-block;
+  background: var(--neutral-gray-3);
+  position: absolute;
+  margin-right: 1rem;
+  margin-top: 0.6rem;
+}
+
+.category-title span {
+  font-size: 16px;
+  color: var(--neutral-gray-5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  margin-top: -0.2rem;
+}
+
+.category-title img {
+  position: absolute;
+  top: -10%;
+  left: -3%;
+}
+.category-item .circle {
+  margin-bottom: 1rem;
+  border: 2px solid #438efd;
+  /* padding: 0.2rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.popular-company {
+  width: 100%;
+  background-image: url(../src/images/main/popular.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 5rem 3rem;
+  position: relative;
+}
+
+.popular-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.popular-caption p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.popular-caption .see-more::after {
+  content: url(../src/images/main/arrow-left-white.png);
+  margin-right: 1rem;
+}
+
+.popular-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 3rem auto 0 auto;
+  gap: 1rem;
+  overflow-x: hidden;
+}
+
+/* Card Item */
+
+.card-item {
+  background: #fff;
+  border-radius: 1.5rem;
+}
+
+.card-item .header-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* margin-right: 1.5rem; */
+  flex-direction: column;
+}
+
+.card-item .header-info img {
+  margin-top: -1.5rem;
+}
+
+.card-header .company-img {
+  width: 100%;
+}
+
+.card-item .header-info .business-category {
+  color: var(--neutral-gray-5);
+}
+
+.card-main {
+  margin: 0 1.5rem;
+}
+
+.main-card-content {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.main-card-content .main-box {
+  border: 1px solid var(--neutral-gray-1);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 14px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.main-card-content .main-box span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.card-footer {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--neutral-gray-5);
+}
+
+.card-footer .card-location {
+  align-items: center;
+  display: flex;
+}
+
+.card-footer .card-location span {
+  margin-right: 0.5rem;
+}
+
+.card-star span {
+  margin-right: 0.5rem;
+}
+
+.card-description {
+  font-size: 14px;
+  color: var(--neutral-gray-5);
+}
+
+.job-offer {
+  padding: 3rem 0;
+}
+
+.job-section {
+  display: flex;
+  margin-top: 7rem;
+  padding: 2rem 0;
+  overflow-x: hidden;
+}
+
+.job-cards {
+  background: var(--neutral-gray-1);
+  text-align: center;
+  position: relative;
+  border-radius: 24px;
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+
+.job-cards img {
+  margin-top: -40%;
+  object-fit: fill;
+}
+
+.job-cards .job-title {
+  color: var(--neutral-gray-7);
+  font-size: 18px;
+}
+
+.job-cards .company-name {
+  color: var(--primary);
+  font-family: "iransans-bold";
+  margin: 1rem 0 3rem 0;
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.news-card .news-card-item {
+  background: var(--white);
+  border-radius: 24px;
+  padding-bottom: 1rem;
+}
+
+.news-card-item span {
+  font-size: 12px;
+  color: var(--neutral-gray-5);
+}
+
+.news-card-item .card-main p {
+  margin: 0.3rem 0;
+}
+
+.news-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  margin: 1rem 0;
+}
+
+.news-card-footer div {
+  display: flex;
+  align-items: center;
+}
+
+.news-card-footer img {
+  margin-left: 1rem;
+}
+
+/* Recent event section styles */
+
+.recent-event-section .event-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.event-cards .card-item {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--neutral-gray-2);
+  background: transparent;
+}
+
+.event-cards .card-content {
+  padding-top: 2.5rem;
+}
+
+.event-cards .card-content span {
+  font-size: 12px;
+  color: var(--neutral-gray-5);
+}
+
+.event-cards .card-content p {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--neutral-gray-7);
+  margin-bottom: 1rem;
+}
+
+.event-cards .event-card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.event-cards .event-card-footer div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Footer */
+
+footer {
+  background-image: url("./images/main/popular.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 5rem;
+  padding: 7rem 2rem;
+  color: var(--white);
+  position: relative;
+}
+
+.get-email {
+  position: relative;
+}
+
+.get-email p {
+  font-family: "iransans-bold";
+}
+
+.get-email input {
+  width: 100%;
+  padding: 0.8rem;
+  outline: none;
+  border-radius: 0.5rem;
+  border: none;
+  margin: 1rem 0;
+}
+
+.get-email button {
+  position: absolute;
+  top: 44%;
+  left: 1%;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer .wrapper {
+  display: grid;
+}
+
+.list-section {
+  margin: 2rem 0;
+}
+
+.list-section li:first-child {
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.list-section li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-info {
+  margin: 3rem 0;
+}
+
+.footer-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+footer .copyright {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 1rem 0;
+  background: var(--primary-shade-5);
+  margin: 0 auto;
+}
+
+.contactus-content {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.contactus-content p {
+  font-family: "iransans-bold";
+}
+
+.contactus-content input {
+  width: 100%;
+  padding: 0.8rem;
+  outline: none;
+  border-radius: 2rem;
+  border: none;
+  margin: 1rem 0;
+}
+
+.contactus-content button {
+  position: absolute;
+  top: 44%;
+  left: 1%;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* resposive design */
+@media screen and (min-width: 300px) {
+  .category h4::after {
+    width: 60%;
+  }
+  .category .category-section {
+    gap: 2rem;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+    align-items: center;
+  }
+  nav .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  nav .nav-logo .hamburger-icon {
+    background-color: #e9eaee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.4rem;
+    border-radius: 0.4rem;
+  }
+  nav .nav-logo .hamburger-icon img {
+    width: 80%;
+  }
+  nav .nav-logo img {
+    width: 70%;
+    height: 70%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+  }
+  nav .nav-logo .nav-search input {
+    width: 100%;
+    color: #737993;
+  }
+  nav .nav-buttons {
+    display: flex;
+  }
+  nav .nav-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0.7rem 0.8rem;
+  }
+  nav .nav-buttons button span {
+    display: none;
+  }
+  nav .nav-buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #aeb2c0;
+    color: #2e303b;
+  }
+  nav .nav-search {
+    display: none;
+  }
+  .nav-search-md {
+    width: 100%;
+    position: relative;
+  }
+  .nav-search-md input {
+    width: 100%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+  }
+  .nav-search-md .nav-search-md::before {
+    content: url(./images/nav/search.png);
+    position: absolute;
+    top: 30%;
+    right: 4%;
+  }
+  .nav-links {
+    display: none;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 1.5rem;
+  }
+  main .hero .hero-caption .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  main .hero .hero-caption .buttons button {
+    display: flex;
+    align-items: center;
+    background-color: #438efd;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .hero .preview-about {
+    padding: 0 2rem;
+  }
+  .preview,
+  .preview-sm,
+  .preview-landscape {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .category h4::after {
+    width: 70%;
+  }
+  .container {
+    width: 540px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .card-item .header-info {
+    margin-right: 1rem;
+    flex-direction: row;
+  }
+
+  .popular-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category h4::after {
+    width: 80%;
+  }
+  .container {
+    width: 750px;
+  }
+  .nav-links {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+  .nav-links .nav-items a {
+    color: #2e303b;
+  }
+  .nav-search-md {
+    display: none;
+  }
+  nav {
+    grid-template-columns: 1fr 40%;
+  }
+  nav .nav-buttons button {
+    font-size: 0.7rem;
+  }
+  nav .nav-logo .hamburger-icon {
+    display: none;
+  }
+  nav .nav-logo img {
+    width: 30%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  nav .nav-logo .nav-search input {
+    width: 85%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 0.7rem 2.3rem;
+    border-radius: 0.5rem;
+  }
+  nav .nav-logo .nav-search::before {
+    content: url(./images/nav/search.png);
+    width: 5rem;
+    position: absolute;
+    top: 30%;
+    right: 3%;
+  }
+  nav .nav-buttons {
+    justify-content: flex-end;
+  }
+  nav .nav-buttons button {
+    gap: 0.5rem;
+  }
+  nav .nav-buttons button span {
+    display: flex;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 2.5rem;
+  }
+  main .hero .preview-about img {
+    width: 50%;
+  }
+  main .business .business-card .square {
+    padding: 5rem 0;
+  }
+  main .business .business-card img {
+    width: 40%;
+  }
+}
+@media (min-width: 992px) {
+  .consepto p {
+    width: 85%;
+  }
+
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-links {
+    display: none;
+  }
+
+  .recent-event-section .event-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .category h4::after {
+    width: 90%;
+  }
+  .category .category-title img {
+    display: none;
+  }
+  .category .category-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  .container {
+    width: 970px;
+  }
+  nav .nav-buttons button {
+    width: 35%;
+  }
+  main .preview-sm {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -15%;
+  }
+  main .preview-about {
+    display: none;
+  }
+  main .preview,
+  main .preview-landscape {
+    display: block;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 3.5rem;
+  }
+  main .hero .preview-about img {
+    width: 70%;
+  }
+  main .information {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .business {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .business .business-card .square {
+    padding: 3.3rem 0;
+  }
+  main .business .business-card img {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  nav .nav-buttons button {
+    font-size: 1rem;
+  }
+  .business .business-card .square {
+    padding: 4.8rem 0 !important;
+  }
+  .business .business-card img {
+    width: 79.5% !important;
+  }
+}
